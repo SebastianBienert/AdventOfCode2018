@@ -1,4 +1,4 @@
-fileData = open("data/day1.txt","r")
+fileData = open("day1.txt","r")
 
 sum = 0
 for line in [x.strip() for x in fileData.readlines()]:

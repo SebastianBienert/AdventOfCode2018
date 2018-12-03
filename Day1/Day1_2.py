@@ -1,4 +1,4 @@
-fileData = open("data/day1.txt","r")
+fileData = open("day1.txt","r")
 lines = [x.strip() for x in fileData.readlines()]
 
 def processLine(line, currentSum):

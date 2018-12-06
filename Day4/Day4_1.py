@@ -31,17 +31,6 @@ guardTimes = dict()
 currentGuard = 0
 startSleep = 0
 
-
-# print("BEFORE: ", lines)
-# for word in lines:
-#     print(word)
-
-# lines.sort()
-
-# print("AFTER: ", lines)
-# for word in lines:
-#     print(word)
-
 lines.sort()
 for line in lines:
     id, lineType, time = process_line(line)

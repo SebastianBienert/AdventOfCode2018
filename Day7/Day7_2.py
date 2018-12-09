@@ -5,6 +5,18 @@ dic = dict()
 childs = set()
 parents = set()
 
+for parent, child in tuples:
+    parents.add(parent)
+    childs.add(child)
+    if parent in dic:
+        dic[parent].append(child)
+    else:
+        dic[parent] = [child]
+    if child in reversed_dic:
+        reversed_dic[child].append(parent)
+    else:
+        reversed_dic[child] = [parent]
+
 
 def get_next_node(available, reversed_dic, current_result):
     real_processed = set(current_result)
@@ -19,25 +31,6 @@ def get_available_len(available, reversed_dic, current_result):
     real_available = set([x for x in available if x == start or real_processed.issuperset(set(reversed_dic[x]))])
     return len(real_available)
 
-
-for parent, child in tuples:
-    parents.add(parent)
-    childs.add(child)
-    if parent in dic:
-        dic[parent].append(child)
-    else:
-        dic[parent] = [child]
-    if child in reversed_dic:
-        reversed_dic[child].append(parent)
-    else:
-        reversed_dic[child] = [parent]
-
-
-# for parent, child in tuples:
-#     if child in reversed_dic:
-#         reversed_dic[child].append(parent)
-#     else:
-#         reversed_dic[child] = [parent]
 
 allLetters = set(childs.union(parents))
 start = min(allLetters.difference(childs))

@@ -1,7 +1,4 @@
 import numpy
-
-
-
 grid = numpy.zeros((301,301))
 
 def calculatePowerLevel(x, y, grid_serial_number):
